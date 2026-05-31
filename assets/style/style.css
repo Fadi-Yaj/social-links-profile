@@ -1,0 +1,221 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+/*
+  - the requirements width
+  1. Mobile: 375px => I will use this as the default style
+  2. Desktop: 1440px => I will use media query for this width
+*/
+
+/* Colors var */
+:root {
+  --main-bg: #141414;
+  --sec-bg: #1f1f1f;
+  --main-color: #fff;
+  --link-bg: #333333;
+  --primary-color: #c5f82a;
+}
+/* Global Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  display: block;
+}
+/* Phone devices First */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--main-bg);
+  color: var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* hover on mobile and click on desktop */
+/* Info Button Styles */
+.info-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: var(--primary-color);
+  color: var(--sec-bg);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1001;
+  transition: all 0.3s ease-in-out;
+}
+
+/* the info content */
+.info {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  width: 220px;
+  background-color: var(--sec-bg);
+  color: var(--main-color);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+}
+.info.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.info h3 {
+  font-size: 1rem;
+}
+.info a {
+  color: var(--primary-color);
+  font-size: 0.875rem;
+}
+hr {
+  margin: 0.5rem 0;
+  border: none;
+  border-top: 1px solid var(--main-color);
+}
+/* click effect */
+.info-btn:active {
+  background-color: var(--sec-bg);
+  color: var(--primary-color);
+}
+
+/* container */
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: column nowrap;
+  padding: 2rem 1rem;
+  width: 100%;
+  max-width: 300px;
+  height: 80vh;
+  background-color: var(--sec-bg);
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* profile image */
+.profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+/* about content */
+.content {
+  margin-bottom: 1rem;
+}
+.content h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.content p {
+  font-size: 0.875rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+.content span {
+  font-size: 0.875rem;
+  /* font-style: italic; */
+  color: var(--main-color);
+}
+
+/* social links */
+.social-links {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+.social-links li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem;
+  background-color: var(--link-bg);
+  color: var(--main-color);
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition:
+    background-color 0.4s ease-in-out,
+    color 0.4s ease-in-out;
+}
+.social-links li i {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.4s ease-in-out;
+}
+/* Hover Effect on content */
+.social-links li:hover {
+  background-color: var(--primary-color);
+  color: var(--sec-bg);
+}
+/* Hover Effect on Icons */
+.social-links li:hover i {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Desktop styles */
+@media (min-width: 1440px) {
+  /* container */
+  .container {
+    max-width: 350px;
+    height: 80vh;
+    padding: 30px;
+  }
+  /* profile image */
+  .profile-image {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 1.5rem;
+  }
+  /* about content */
+  .content h1 {
+    font-size: 1.5rem;
+  }
+  .content p {
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1.3rem;
+  }
+  .content span {
+    margin-top: 1.3rem;
+    font-size: 0.875rem;
+  }
+  .social-links {
+    margin-top: 0.5rem;
+  }
+}
