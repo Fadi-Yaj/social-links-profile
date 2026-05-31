@@ -25,7 +25,7 @@ it taught me many things I didn't know before.
 ## How to operate the project locally
 
 1. Copy the link:
-   `git clone https://github.com/اسم_حسابك/اسم_المشروع.git`
+   `git clone https://github.com/Fadi-Yaj/social-links-profile.git`
 2. Open `index.html` on your device.
 
 ## The Challenge I Faced
