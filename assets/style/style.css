@@ -107,11 +107,13 @@ hr {
 
 /* container */
 .container {
+  overflow: scroll;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-flow: column nowrap;
-  padding: 2rem 1rem;
+  margin-block: auto;
+  padding-inline: 2rem;
   width: 100%;
   max-width: 300px;
   height: 80vh;
