@@ -43,4 +43,4 @@ it taught me many things I didn't know before.
 
 ## Live Demo
 
--
+- `https://fadi-yaj.github.io/social-links-profile/`
